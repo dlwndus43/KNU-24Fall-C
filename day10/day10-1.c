@@ -87,6 +87,8 @@ int main()
 		scanf_s("%d", &choice);
 		printf("\n");
 
+		int should_Print = 0;
+
 		switch (choice)
 		{
 		case 1:
@@ -101,6 +103,7 @@ int main()
 			}
 
 			insert_node_last(create_node(name, score));
+			should_Print = 1;
 			break;
 
 		case 2:
@@ -114,16 +117,19 @@ int main()
 			{
 				delete_node(name);
 			}
+			should_Print = 1;
 			break;
 
 		case 3:
-
 		default:
-			printf("\n!!올바른 범위의 옵션을 선택하세요!!\n\n");
+			printf("프로그램을 종료합니다.\n");
 			iteration = 0;
 			break;
 		}
-		print_nodes();
+		if (should_Print)
+		{
+			print_nodes();
+		}
 	}
 	return 0;
 }
