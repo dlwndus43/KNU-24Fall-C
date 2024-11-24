@@ -14,22 +14,21 @@ int main()
 	D = b * b - (4 * a * c);
 	printf("D = %d\n", D);
 
-	if (D > 0)
+	if (D > 0)			// 두 개의 실근
 	{
-		int x, y;
-		x = (-b + (sqrt(b * b - 4 * a * c))) / 2 * a;
-		y = (-b - (sqrt(b * b - 4 * a * c))) / 2 * a;
+		double x, y;
+		x = (-b + sqrt(D)) / (2.0 * a);
+		y = (-b - sqrt(D)) / (2.0 * a);
 
-		printf("두개의 근: %d과(와) %d\n", x, y);
+		printf("두개의 근: %d과(와) %.2f\n", x, y);
 	}
-	else if (D == 0)
+	else if (D == 0)			// 중근
 	{
-		int x;
-
-		x = (-b + (sqrt(b * b - 4 * a * c))) / 2 * a;
-		printf("하나의 근(중근): %d\n", x);
+		double x;
+		x = -b / (2.0 * a);
+		printf("하나의 근(중근): %.2f\n", x);
 	}
-	else
+	else			// 허근
 	{
 		printf("근이 없음(허근).\n");
 		return 0;
