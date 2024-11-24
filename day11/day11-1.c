@@ -11,7 +11,7 @@ int main()
 	printf("계수 a, b, c 입력(정수만, 구분자는 띄어쓰기 사용): ");
 	scanf_s("%d %d %d", &a, &b, &c);
 	
-	D = b * b - (4 * a * c);
+	D = b * b - 4 * a * c;
 	printf("D = %d\n", D);
 
 	if (D > 0)			// 두 개의 실근
@@ -20,7 +20,7 @@ int main()
 		x = (-b + sqrt(D)) / (2.0 * a);
 		y = (-b - sqrt(D)) / (2.0 * a);
 
-		printf("두개의 근: %d과(와) %.2f\n", x, y);
+		printf("두개의 근: %.2f과(와) %.2f\n", x, y);
 	}
 	else if (D == 0)			// 중근
 	{
